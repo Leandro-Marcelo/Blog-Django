@@ -83,10 +83,15 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+""" Aquí es donde vamos a configurar posgrest """
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'blog',
+        'USER': 'leandro',
+        'PASSWORD': 'leandro123',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
