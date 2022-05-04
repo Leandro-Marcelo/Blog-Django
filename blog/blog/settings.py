@@ -23,12 +23,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7)00!-)sprsd*id$%pbgj%+%ym9off=*(njw&zvni^db_tefny'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+""" Es importante que esto sea true porque así nos va a mostrar el error de nuestra aplicación en toda la pantalla (tipo react o next js xd, un debug cualquiera), pero no olvidar que en production esto debería ir en false """
 DEBUG = True
 
+""" esto no funciona si es que DEBUG es true, y lo que realiza es como el cors de NodeJS """
 ALLOWED_HOSTS = []
 
 
 # Application definition
+""" Esta configuración nos permite editarse para todos los projects, esta configuración le dice a DJANGO que aplicaciones estan activas para nuestro sitio, por defecto incluye estas  """
+
+""" el admin es el sitio de administración que ya nos proporciona DJANGO """
+""" el de messages se refiere a posibles mensajes de validaciones  """
+""" el último es para archivos statics """
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+""" Los middleware que agrega DJANGO, generalmente es para seguridad """
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -49,6 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+""" esto es como importar las routes, le estamos diciendo el directorio de donde se encuentran nuestras routes """
 ROOT_URLCONF = 'blog.urls'
 
 TEMPLATES = [
