@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from posts.views import posts
+from posts.views import posts, home, post, create_post
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('posts/',posts)
+    path('posts/',posts),
+    path("", home), # cuando nosotros dejamos un string vacio, eso significa el home
+    path('posts/createPost', create_post), # OJO importantisimo de que este antes del post/<int:id> ya que sino va a entrar ahí primero y nosotros no queremos eso
+    path('post/<int:id>', post),
 ]
