@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'posts'
+    'posts',
+    'account'
 ]
 
 """ Los middleware que agrega DJANGO, generalmente es para seguridad """

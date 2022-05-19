@@ -19,7 +19,8 @@ from django.urls import path, include
 from posts.views import home 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path("", home), # cuando nosotros dejamos un string vacio, eso significa el home, es decir, /
-    path('posts/', include('posts.urls', namespace="posts")) # el namespace va de la mano con el app_name
+    path('admin/', admin.site.urls),
+    path('posts/', include('posts.urls', namespace="posts")), # el namespace va de la mano con el app_name
+    path('auth/', include('account.urls', namespace='auth'))
 ]
