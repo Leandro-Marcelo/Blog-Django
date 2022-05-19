@@ -61,7 +61,7 @@
         <div class="card" style="width: 18rem;">
             <a href="{{ post.get_url }}"><img src="{{post.img}}" alt="image" class="card-img-top"></a>
             <div class="card-body">
-                <h5 class="card-title"><a href="/post/{{post.id}}">{{post.title}}</a></h5>
+                <h5 class="card-title"><a href="{{ post.get_url }}">{{post.title}}</a></h5>
                 <p class="card-text">{{post.description}} {{post.created_at}}</p>
                 <a href="/posts/edit/{{post.id}}" class="btn btn-primary">Edit</a>
                 <a class="btn btn-danger delete-confirmation" onclick="deleteConfirmation({{ post.id }})" >Delete</a>

@@ -30,7 +30,12 @@ def create_post(req):
         title=req.POST['title'],
         description=req.POST['description'],
         img=req.POST['image'],
-        content=req.POST['content']
+        content=req.POST['content'],
+        # Django nos agrega dos campos al momento de hacer un foreignkey, author y author id,
+        # mientras que en author debemos pasarle tódo el objeto de author, en author id, solo le pasamos su id
+        author_id = req.user.pk
+        # author = req.user esa es la otra forma de pasarlo
+
         )
         # me permite almacenar este new post en la base de datos
         post.save() 

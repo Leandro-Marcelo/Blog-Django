@@ -57,6 +57,8 @@
 
         <h1>Posts</h1>
         <div class="card" style="width: 18rem;">
+            <p>{{ post.author.username }}</p>
+            <p>{{ post.author.first_name }} {{ post.author.last_name }}</p>
             <img src="{{post.img}}" alt="image" class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title">{{post.title}}</h5>
