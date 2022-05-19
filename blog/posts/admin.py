@@ -14,4 +14,4 @@ from .models import Post
 @admin.register(Post)
 # Que PostAdmin herede de admin.ModelAdmin para ahora utilizar el atributo list_display y modificarlo
 class PostAdmin(admin.ModelAdmin):
-  list_display = ('title', 'description', 'created_at')  # puede recibir una lista o una tupla, es mas común ver una tupla
+    list_display = ('title', 'description', 'created_at')  # puede recibir una lista o una tupla, es mas común ver una tupla
