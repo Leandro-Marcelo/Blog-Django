@@ -14,14 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from posts.views import posts, home, post, create_post, edit_post
+from django.urls import path, include
+
+from posts.views import home 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('posts/',posts),
-    path("", home), # cuando nosotros dejamos un string vacio, eso significa el home
-    path('posts/createPost', create_post), # OJO importantisimo de que este antes del post/<int:id> ya que sino va a entrar ahí primero y nosotros no queremos eso
-    path('post/<int:id>', post),
-    path('post/edit/<int:id>', edit_post),
+    path("", home), # cuando nosotros dejamos un string vacio, eso significa el home, es decir, /
+    path('posts/', include('posts.urls', namespace="posts")) # el namespace va de la mano con el app_name
 ]

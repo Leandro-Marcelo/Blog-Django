@@ -12,7 +12,7 @@
     <!-- si nosotros ponemos get, esto llegará en el path tipo ?title=mitile&description=midescription -->
     <!-- si usamos post van a llegar en el body de la petición -->
     <!-- y el action sirve para indicar a donde queremos que se envie el formulario, por ahorita /posts/create sin embargo luego harémos esto mas dinamico  -->
-    <form action="/posts/createPost" method="post">
+    <form action="/posts/create" method="post">
         {% csrf_token %}
         <input type="text" name="title" placeholder="title">
         <input type="text" name="description" placeholder="description">

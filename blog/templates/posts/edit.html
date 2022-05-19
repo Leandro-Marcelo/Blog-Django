@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <h1>Edit</h1>
-        <form action="/post/edit/{{post.id}}" method="post">
+        <form action="/posts/edit/{{post.id}}" method="post">
             {% csrf_token %}
             <input value="{{post.title}}" type="text" name="title" placeholder="title">
             <input value="{{post.description}}" type="text" name="description" placeholder="description">
